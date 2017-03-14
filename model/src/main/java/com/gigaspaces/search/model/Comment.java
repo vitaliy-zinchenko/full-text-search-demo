@@ -1,9 +1,7 @@
 package com.gigaspaces.search.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.gigaspaces.annotation.pojo.SpaceClass;
 import com.gigaspaces.annotation.pojo.SpaceId;
-import com.sun.xml.internal.txw2.annotation.XmlNamespace;
 import org.apache.lucene.analysis.core.KeywordAnalyzer;
 import org.openspaces.textsearch.SpaceTextAnalyzer;
 import org.openspaces.textsearch.SpaceTextIndex;
