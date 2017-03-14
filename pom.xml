@@ -34,7 +34,7 @@
 
     <properties>
         <jdk.version>1.7</jdk.version>
-        <gs.version>12.1.0-SNAPSHOT</gs.version>
+        <gs.version>12.1.0-m21</gs.version>
         <spring.dao.version>2.0.8</spring.dao.version>
     </properties>
 

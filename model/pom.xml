@@ -24,7 +24,7 @@
         <dependency>
             <groupId>org.gigaspaces</groupId>
             <artifactId>xap-full-text-search</artifactId>
-            <version>12.1.0-SNAPSHOT</version>
+            <version>${gs.version}</version>
         </dependency>
         <dependency>
             <groupId>org.gigaspaces</groupId>

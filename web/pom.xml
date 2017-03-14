@@ -17,6 +17,7 @@
 
     <properties>
         <jackson.databind-version>2.2.3</jackson.databind-version>
+        <spring.version>4.1.1.RELEASE</spring.version>
     </properties>
 
     <dependencies>
@@ -30,56 +31,48 @@
             <artifactId>xap-openspaces</artifactId>
             <version>${gs.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.gigaspaces</groupId>-->
-            <!--<artifactId>gs-runtime</artifactId>-->
-            <!--<version>${gs.version}</version>-->
-        <!--</dependency>-->
 
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-dao</artifactId>-->
-            <!--<version>${spring.dao.version}</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>commons-collections</groupId>-->
-            <!--<artifactId>commons-collections</artifactId>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>log4j</groupId>
@@ -92,13 +85,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.databind-version}</version>
         </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>javax.servlet</groupId>-->
-            <!--<artifactId>servlet-api</artifactId>-->
-            <!--<version>2.5</version>-->
-            <!--<scope>compile</scope>-->
-        <!--</dependency>-->
     </dependencies>
 
     <!-- Align spring versions for all projects using openspaces -->
