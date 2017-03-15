@@ -12,10 +12,10 @@ $(function() {
             return $(item).val();
         })
 
-        findByQuery(q, params.toArray(), function (data) {
+        findByQuery(q, params.toArray(), "#custom-search .error", function (data) {
             $("#custom-search .search-result").html(searchResultTemplate({comments: data.comments}));
             $("#custom-search .time").html(data.time)
-            $("#custom-search .loaded-count").html(data.comments.length)
+            $("#custom-search .loaded-count").html(data.count)
         })
     })
 
@@ -33,7 +33,7 @@ $(function() {
         var selectedOption = $("#pre-defined-search .form-control option:selected")
         var q = selectedOption.val().trim()
         var params = selectedOption.attr('params').split(",")
-        findByQuery(q, params, function(data) {
+        findByQuery(q, params, "#pre-defined-search .error", function(data) {
             $("#pre-defined-search .search-result").html(searchResultTemplate({comments: data.comments}));
             $("#pre-defined-search .time").html(data.time);
             $("#pre-defined-search .loaded-count").html(data.comments.length)
@@ -41,11 +41,18 @@ $(function() {
         })
     }
 
-    function findByQuery(q, params, handler) {
+    function findByQuery(q, params, errorSelector, handler, fail) {
         if(q != "") {
             $.ajax({
                 url: 'query?q='+ q + "&p=" + params.join("&p="),
-                success: handler
+                success: function(data) {
+                    $(errorSelector).hide()
+                    handler(data)
+                },
+                error : function(xhr, textStatus, errorThrown) {
+                    $(errorSelector).html(errorThrown)
+                    $(errorSelector).show()
+                }
             });
         }
     }

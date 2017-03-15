@@ -9,23 +9,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
 public class WordCountController {
+
     @Autowired
     private CommentService service;
 
     @RequestMapping(value = "/query", method = RequestMethod.GET)
     @ResponseBody
-    public CommentsResponse query(@RequestParam("q") String query, @RequestParam("p") List<String> parameters) {
-        System.out.println("q: " + query + " params: " + parameters);
+    public CommentsResponse query(@RequestParam("q") String query,
+                                  @RequestParam("p") List<String> parameters) {
         Long start = System.currentTimeMillis();
         Comment[] comments = service.getComments(query, parameters);
         Long finish = System.currentTimeMillis();
         Long time = finish - start;
-        System.out.println("Loaded " + comments.length + " in " + time + " ms");
-        return new CommentsResponse(comments, time, service.count());
+        Comment[] commentsHead = Arrays.copyOf(comments, comments.length > 100 ? 100 : comments.length);
+        return new CommentsResponse(commentsHead, time, comments.length);
     }
 
     static class CommentsResponse {

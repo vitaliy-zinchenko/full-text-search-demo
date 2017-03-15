@@ -5,3 +5,7 @@
 .params-container .param {
     margin-bottom: 10px;
 }
+
+.navbar-header {
+    padding-left: 50px;
+}

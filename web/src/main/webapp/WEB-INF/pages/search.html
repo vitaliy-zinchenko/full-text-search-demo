@@ -12,21 +12,39 @@
 </head>
 <body>
 
-<div class="row content">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">XAP Full Text Search Demo</a>
+        </div>
+    </div>
+</nav>
 
+<div class="row content">
 
     <div id="pre-defined-search" class="col-xs-6">
         <form action="javascript:void(0);">
             <div class="form-group">
                 <select id="pre-defined-queries" class="form-control">
-                    <option selected value="body text:match ?" params="java">Find all words wits 'java' (query="body text:match ?" params="['java']")</option>
-                    <option value="body text:match ?" params="scala">Find all words wits 'scala' (query="body text:match ?" params="['scala']")</option>
+                    <option selected value="body text:match ?" params="java">Find all words wits 'java' (query="body
+                        text:match ?" params="['java']")
+                    </option>
+                    <option value="body text:match ?" params="scala">Find all words wits 'scala' (query="body text:match
+                        ?" params="['scala']")
+                    </option>
                 </select>
             </div>
             <button type="submit" class="search-submit btn btn-success">Search</button>
         </form>
+
         <br/>
-        Loaded <b class="loaded-count text-success"></b> items. Query executed in: <b class="time text-success"></b> ms  <b id="loaded-message" hidden>Loaded!</b>
+        <div class="alert alert-danger error" role="alert" style="display: none;"></div>
+
+        <br/>
+        Loaded <b class="loaded-count text-success"></b> items. Query executed in: <b class="time text-success"></b> ms
+        <b id="loaded-message" hidden>Loaded!</b>
+        <br/>
+        Note: show first 100 items
         <table class="table table-striped">
             <thead>
             <tr>
@@ -39,7 +57,6 @@
             </tbody>
         </table>
     </div>
-
 
 
     <div id="custom-search" class="col-xs-6">
@@ -57,8 +74,14 @@
             </div>
             <button type="submit" class="search-submit btn btn-success">Search</button>
         </form>
+
+        <br/>
+        <div class="alert alert-danger error" role="alert" style="display: none;"></div>
+
         <br/>
         Loaded <b class="loaded-count text-success"></b> items. Query executed in: <b class="time text-success"></b> ms
+        <br/>
+        Note: show first 100 items
         <table class="table table-striped">
             <thead>
             <tr>
@@ -87,13 +110,11 @@
 </script>
 
 <script id="param-template" type="text/x-handlebars-template">
-    <div class="param">
-        <input class="form-control">
-        <button class="remove btn btn-default">Remove</button>
+    <div class="row param">
+        <div class="col-md-10"><input class="form-control"></div>
+        <div class="col-md-2"><button class="remove btn btn-default">Remove</button></div>
     </div>
 </script>
-
-
 
 
 </html>

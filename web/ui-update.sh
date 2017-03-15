@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-WEB_ID=web_1_738419406
-PROJECT_FOLDER=/Users/vitaliizinchenko/work/projects/GS/FTS/article/demo
+WEB_ID=web_1_168583700
+PROJECT_FOLDER=/Users/vitaliizinchenko/work/projects/GS/FTS/article/full-text-search-demo
 XAP_FOLDER=/Users/vitaliizinchenko/work/projects/GS/CLI/xap-premium/xap-dist/target/package/product
 
 yes | cp -i $PROJECT_FOLDER/web/src/main/webapp/WEB-INF/pages/* $XAP_FOLDER/work/processing-units/$WEB_ID/WEB-INF/pages

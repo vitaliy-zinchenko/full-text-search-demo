@@ -48,7 +48,7 @@ public class Feeder {
                 space.writeMultiple(list.toArray());
                 count += list.size();
                 list.clear();
-                System.out.println("wrote: " + count/1000 + " t");
+                System.out.println("Wrote: " + count/1000 + "k");
             }
         }
 

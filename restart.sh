@@ -7,4 +7,4 @@ mvn clean install
 
 "$XAP_HOME/gs.sh" undeploy web
 
-"$XAP_HOME/gs.sh" deploy /Users/vitaliizinchenko/work/projects/GS/FTS/article/demo/web/target/web.war
+"$XAP_HOME/gs.sh" deploy /Users/vitaliizinchenko/work/projects/GS/FTS/article/full-text-search-demo/web/target/web.war

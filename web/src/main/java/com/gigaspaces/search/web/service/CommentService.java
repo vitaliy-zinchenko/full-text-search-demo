@@ -18,22 +18,10 @@ public class CommentService {
         SQLQuery<Comment> query = new SQLQuery<Comment>(Comment.class, queryString);
         for (int i = 0; i < params.size(); i++) {
             String p = params.get(i);
-            System.out.println("Setting i = " + (i + 1) + " q = " + queryString + " p = " + p);
-
             query.setParameter(i + 1, p);
         }
-        System.out.println("Running query: " + query);
         Comment[] comments = space.readMultiple(query);
-        System.out.println("Query running finished");
         return comments == null ? new Comment[0] : comments;
-    }
-
-    public int count() {
-        Long start = System.currentTimeMillis();
-        int count = 1;//space.count(new Comment());
-        Long finish = System.currentTimeMillis();
-        System.out.println("Time to count: " + (finish - start));
-        return count;
     }
 
 }
